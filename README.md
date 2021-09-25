@@ -54,3 +54,7 @@ The data generated is comma delimited with the following order: Luminosity in Lu
 ### Main File (main.py)
 The main file connects with the microcontroller mock and updates the GUI whenever a message is received from the microcontroller thread. It uses the eel package to connect and call javascript function that controls the HTML based GUI.  
 
+### GUI 
+The GUI is based on HTML,CSS , and JS that binds directly into Python using eel package.
+![](https://i.imgur.com/M1blEka.png)
+Try to switch the light and see how the luminosity changes :)
