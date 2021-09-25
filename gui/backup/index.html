@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <script type="text/javascript" src="eel.js"></script>
+        <script src="script.js" type="text/javascript"></script>
+        
+        <!-- CSS only -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+            integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+        <link rel = "stylesheet" href="style.css">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>IoT Monitor</title>
+    </head>
+
+    <body onload="clockTicking()">
+        <div class="custom-shape-divider-top-1632418834">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                preserveAspectRatio="none">
+                <path
+                    d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
+                    opacity=".25" class="shape-fill"></path>
+                <path
+                    d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z"
+                    opacity=".5" class="shape-fill"></path>
+                <path
+                    d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z"
+                    class="shape-fill"></path>
+            </svg>
+        </div>
+        <div class="container-fluid  text-center " style="background-color: #171010; padding: 5rem 0 1rem 0;">
+            <div class="container monitoring-title text-white" style="flex: 3">
+                <h1 class="display-2">IoT Monitoring System</h1>
+                <h5 id="time">Clock</h5>
+            </div>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 120 1440 200">
+            <path fill="#362222" fill-opacity="1"
+                d="M0,288L60,250.7C120,213,240,139,360,128C480,117,600,171,720,181.3C840,192,960,160,1080,170.7C1200,181,1320,235,1380,261.3L1440,288L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z">
+            </path>
+        </svg>
+        <div class="container-fluid monitoring-system data-layout">
+            <div class="row ">
+                <div class="col text-center" style="padding-left: 10rem;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" fill="currentColor"
+                        class="bi bi-thermometer-half" viewBox="0 0 16 16">
+                        <path d="M9.5 12.5a1.5 1.5 0 1 1-2-1.415V6.5a.5.5 0 0 1 1 0v4.585a1.5 1.5 0 0 1 1 1.415z" />
+                        <path
+                            d="M5.5 2.5a2.5 2.5 0 0 1 5 0v7.55a3.5 3.5 0 1 1-5 0V2.5zM8 1a1.5 1.5 0 0 0-1.5 1.5v7.987l-.167.15a2.5 2.5 0 1 0 3.333 0l-.166-.15V2.5A1.5 1.5 0 0 0 8 1z" />
+                    </svg>
+                    <h3 class="fw-normal" id="thermometer-degree">100°C</h3>
+                </div>
+                <div class="col text-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" fill="currentColor"
+                        class="bi bi-droplet-fill" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M8 16a6 6 0 0 0 6-6c0-1.655-1.122-2.904-2.432-4.362C10.254 4.176 8.75 2.503 8 0c0 0-6 5.686-6 10a6 6 0 0 0 6 6zM6.646 4.646c-.376.377-1.272 1.489-2.093 3.13l.894.448c.78-1.559 1.616-2.58 1.907-2.87l-.708-.708z" />
+                    </svg>
+                    <h3 class="fw-normal" id="humidity-degree">100°C</h3>
+                </div>
+                <div class="col text-center" style="padding-right: 10rem;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" fill="currentColor"
+                        class="bi bi-lightbulb-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M2 6a6 6 0 1 1 10.174 4.31c-.203.196-.359.4-.453.619l-.762 1.769A.5.5 0 0 1 10.5 13h-5a.5.5 0 0 1-.46-.302l-.761-1.77a1.964 1.964 0 0 0-.453-.618A5.984 5.984 0 0 1 2 6zm3 8.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1l-.224.447a1 1 0 0 1-.894.553H6.618a1 1 0 0 1-.894-.553L5.5 15a.5.5 0 0 1-.5-.5z" />
+                    </svg>
+                    <h3 class="fw-normal" id="light-degree">100 Lux</h3>
+                </div>
+            </div>
+            <div>
+                <h2 class="display-6 pt-4 text-center">Ligth Switch</h2>
+                <div class="container pt-3" style="display: flex; flex-direction:row;width: auto; ">
+                    <h3 class="text-end" style="flex:3;">OFF</h3>
+                    <div class="container text-center" style="flex:1;">
+                        <div class=" form-check-inline-block form-switch">
+                            <input class=" form-check-input" type="checkbox" id="flexSwitchCheckDefault"
+                                style="width:60px; height: 25px" checked>
+                        </div>
+                    </div>
+                    <h3 class="text-start" style="flex:3;">ON</h3>
+                </div>
+            </div>
+        </div>
+        <footer class="text-center text-lg-start bg-light text-muted"
+            style="position: absolute; bottom: 0; width: 100%; ">
+            <div class="text-center p-1" style="background-color: rgba(0, 0, 0, 0.8);color: #F2F4F8"> © 2021 Copyright:
+                <a class="text-white fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+            </div>
+        </footer>
+    </body>
+
+</html>
